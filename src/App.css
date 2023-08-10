@@ -21,3 +21,7 @@ body {
   /* global 92%+ browsers support */
   background: var(--gradient-bg);
 }
+
+a {
+  text-decoration: none;
+}
