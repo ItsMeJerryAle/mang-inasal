@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/mang-inasal-logo.png'
-import { RiFacebookCircleFill, RiInstagramFill, RiRestaurant2Fill, RiCloseLine, RiMenu3Line } from "react-icons/ri";
+import Leaf from '../../assets/grill.png'
+import { RiFacebookCircleFill, RiInstagramFill, RiRestaurant2Fill, RiCloseLine, RiMenu5Fill } from "react-icons/ri";
 import './navbar.css';
 
 const Menu = () => (
@@ -36,31 +37,39 @@ const Navbar = () => {
                         <RiRestaurant2Fill color="004600" size={27} /> <p>Order Now</p>
                     </button>
                 </div>
-                <div className="toggle-menu">
-                    {
-                        toggleMenu
-                            ? <RiCloseLine color="fff" size={27} onClick={() => setToggleMenu(false)} />
-                            : <RiMenu3Line color="fff" size={27} onClick={() => setToggleMenu(true)} />
-                    }
-                    {toggleMenu && (
-                        <div className='toggle-menu-container scale-up-center'>
-                            <div className='toggle-menu-container-links'>
-                                <Menu />
 
-                                <div className='toggle-menu-container-cta'>
+            </div>
+            <div className="toggle-menu">
+                {
+                    toggleMenu
+                        ? <RiCloseLine color="fff" size={27} onClick={() => setToggleMenu(false)} />
+                        : <RiMenu5Fill color="fff" size={27} onClick={() => setToggleMenu(true)} />
+                }
+                {toggleMenu && (
+                    <div className='toggle-menu-container scale-up-center'>
+                        <div className='toggle-menu-container-links'>
+                            
+                            <Menu />
+                            <div className='toggle-menu-container-cta'>
+                                <div className='socials'>
                                     <p>Follow us on: </p>
-                                    <RiFacebookCircleFill color="fff" size={27} />
-                                    <RiInstagramFill color="fff" size={27} />
-                                    <button type="button">
-                                        <RiRestaurant2Fill color="004600" size={27} /> <p>Order Now</p>
-                                    </button>
-                                </div>
+                                    <div>
+                                        <a href="#a"><RiFacebookCircleFill color="fff" size={27} /></a>
+                                        <a href="#b"><RiInstagramFill color="fff" size={27} /></a>
 
+                                    </div>
+                                </div>
+                                
+                            <button type="button">
+                                <RiRestaurant2Fill color="#004600" size={27} />Order Now
+                            </button>
+                            
                             </div>
                         </div>
-                    )
-                    }
-                </div>
+                        <div className='bg-leaf'><img src={Leaf} alt="leaf" /></div>
+                    </div>
+                )
+                }
             </div>
         </div>
     )
